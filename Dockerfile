@@ -24,5 +24,6 @@ CMD ["apache2-foreground"]
 
 #docker run -d --name mediawiki_container -p 8080:80 mediawiki_img
 
-
+#This command will create and start a container named mediawiki_container based on the mediawiki image, 
+#exposing port 80 from the container to port 8080 on the host.
 # We can access mediawiki_container instance by navigating to http://your_vm_ip:8080 in web browser.
