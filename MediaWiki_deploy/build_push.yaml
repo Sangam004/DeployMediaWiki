@@ -11,7 +11,7 @@ steps:
     containerRegistry: 'ACRConnection' # Replace with your Azure Container Registry connection alias
     repository: '<acr_login_server>/mediawiki'
     command: 'build'
-    Dockerfile: '**/Dockerfile_mediawiki'
+    Dockerfile: '/Dockerfile_mediawiki'
 
 - task: Docker@2
   displayName: Build MySQL Docker image
@@ -19,7 +19,7 @@ steps:
     containerRegistry: 'ACRConnection' # Replace with your Azure Container Registry connection alias
     repository: '<acr_login_server>/mysql'
     command: 'build'
-    Dockerfile: '**/Dockerfile_mysql'
+    Dockerfile: '/Dockerfile_mysql'
 
 - task: Docker@2
   displayName: Push MediaWiki Docker image to ACR
