@@ -1,4 +1,4 @@
-# Use the official MediaWiki image from Docker Hub
+# Using the official MediaWiki image from Docker Hub
 FROM mediawiki
 
 # Set environment variables
