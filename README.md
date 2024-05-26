@@ -1,7 +1,5 @@
 # DeployMediaWiki
 
-# DeployMediaWiki
-
 Deploy MediaWiki, to Azure Kubernetes Service (AKS) using Docker containers.
 
 Prerequisites
@@ -19,18 +17,35 @@ Docker installed locally or access to Azure Cloud Shell
 Steps
 
 1. Build Docker Images
-docker build -t <acr_login_server>/mediawiki .
 
-2. Push Docker Image to ACR
-Log in to Azure Container Registry (ACR) and push the Docker image
+docker build -t mediawiki .
+docker build -t mysql .
 
+2. Tag and Push Docker Images to ACR 
+
+Tag the built Docker images with Azure Container Registry (ACR) login server and push them to ACR
+
+* Log in to ACR
 az acr login --name <acr_name>
+
+* Tag and push MediaWiki image
+docker tag mediawiki <acr_login_server>/mediawiki
 docker push <acr_login_server>/mediawiki
 
-3. Deploy MediaWiki to AKS
-Deploy MediaWiki to AKS using the Kubernetes manifest file
+* Tag and push MySQL image
+docker tag mysql <acr_login_server>/mysql
+docker push <acr_login_server>/mysql
 
+3. Deploy MediaWiki and MySQL to AKS
+
+Deploy MediaWiki and MySQL to AKS using the Kubernetes manifest files
+
+* Deploy MediaWiki
 kubectl apply -f mediawiki-deployment.yaml
+
+* Deploy MySQL
+kubectl apply -f mysql-deployment.yaml
+
 
 4. Expose MediaWiki Service
 Expose the MediaWiki service to access it externally
@@ -43,3 +58,5 @@ Get the external IP address of the MediaWiki service
 kubectl get svc mediawiki-service
 
 Access MediaWiki using the external IP address in web browser.
+
+We also do build images on our LinuxVM and then push it to ACR.
