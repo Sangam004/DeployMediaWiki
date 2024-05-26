@@ -6,7 +6,7 @@ Log in to ACR: Log in to your Azure Container Registry from the Docker CLI.
 
 Push Docker Images: Push the tagged Docker images to your Azure Container Registry.
 
-Here's a step-by-step guide:
+Here's a step-by-step:
 
 Step 1: Log in to Azure and ACR
 
