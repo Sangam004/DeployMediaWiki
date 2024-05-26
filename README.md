@@ -2,9 +2,10 @@
 
 # DeployMediaWiki
 
-MediaWiki, to Azure Kubernetes Service (AKS) using Docker containers.
+Deploy MediaWiki, to Azure Kubernetes Service (AKS) using Docker containers.
 
 Prerequisites
+
 we need the following prerequisites:
 
 An Azure subscription
