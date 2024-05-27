@@ -1,0 +1,102 @@
+Here are some possible interview questions related to the deployment of MediaWiki and MySQL to Azure Kubernetes Service (AKS) using Docker containers:
+
+### General Questions:
+
+1. What is MediaWiki?
+2. Why would someone choose to deploy MediaWiki on Kubernetes?
+3. What are the benefits of using Docker containers for deploying applications?
+4. What is Azure Kubernetes Service (AKS)?
+5. Why would someone choose AKS over managing Kubernetes clusters manually?
+
+### Technical Questions:
+
+6. Can you explain the process of building Docker images for MediaWiki and MySQL?
+7. How do you tag and push Docker images to Azure Container Registry (ACR)?
+8. What are Kubernetes manifest files, and how are they used in deploying applications to AKS?
+9. How do you expose services in Kubernetes to make them accessible externally?
+10. What is the difference between a Kubernetes Deployment and a Kubernetes Service?
+11. How do you manage secrets and configuration in Kubernetes for applications like MediaWiki and MySQL?
+12. Can you explain the networking model in AKS and how it affects communication between application components?
+
+### Troubleshooting Questions:
+
+13. What would you do if the deployment of MediaWiki or MySQL to AKS fails?
+14. How do you monitor and troubleshoot issues in a Kubernetes cluster?
+15. What are some common challenges or considerations when deploying stateful applications like databases to Kubernetes?
+
+### Best Practices Questions:
+
+16. What are some best practices for securing Docker containers and Kubernetes clusters?
+17. How do you ensure high availability and scalability for applications deployed on AKS?
+18. Can you discuss strategies for rolling updates and blue-green deployments in Kubernetes?
+19. How do you manage application dependencies and versioning in a Kubernetes environment?
+20. What are some considerations for optimizing resource utilization and cost management in AKS deployments?
+
+These questions cover various aspects of the deployment process, including technical knowledge, 
+troubleshooting skills, best practices, and understanding of Kubernetes and Docker concepts. 
+Being prepared to answer these questions will demonstrate your proficiency in deploying and 
+managing applications on AKS using Docker containers.
+
+Answers
+Certainly! Here are suggested answers for the interview questions related to deploying MediaWiki and MySQL to Azure Kubernetes Service (AKS) using Docker containers:
+
+### General Questions:
+
+1. **What is MediaWiki?**
+   - MediaWiki is a free and open-source wiki software package written in PHP, originally for use on Wikipedia. It powers numerous wikis, including Wikipedia, the most popular online encyclopedia.
+
+2. **Why would someone choose to deploy MediaWiki on Kubernetes?**
+   - Kubernetes offers benefits such as scalability, fault tolerance, and ease of management. Deploying MediaWiki on Kubernetes allows for efficient resource utilization, seamless scaling, and automated deployment and management processes.
+
+3. **What are the benefits of using Docker containers for deploying applications?**
+   - Docker containers provide lightweight, portable, and consistent environments for applications. They enable easy packaging, distribution, and deployment of software, ensuring consistency across different environments and simplifying dependency management.
+
+4. **What is Azure Kubernetes Service (AKS)?**
+   - Azure Kubernetes Service (AKS) is a managed Kubernetes service provided by Microsoft Azure. It simplifies the deployment, management, and scaling of containerized applications using Kubernetes on Azure infrastructure.
+
+5. **Why would someone choose AKS over managing Kubernetes clusters manually?**
+   - AKS abstracts away the complexities of managing Kubernetes infrastructure, such as cluster provisioning, scaling, and maintenance. It provides a managed environment with automated updates, integrated monitoring, and seamless integration with other Azure services.
+
+### Technical Questions:
+
+6. **Can you explain the process of building Docker images for MediaWiki and MySQL?**
+   - To build Docker images, we use Dockerfiles that define the environment and dependencies for each application. We execute `docker build` commands, specifying the location of the Dockerfile and tagging the resulting image with a name and version.
+
+7. **How do you tag and push Docker images to Azure Container Registry (ACR)?**
+   - We use the `docker tag` command to tag the built Docker image with the ACR login server URL and then use `docker push` to push the tagged image to ACR. This makes the Docker image available in our ACR repository.
+
+8. **What are Kubernetes manifest files, and how are they used in deploying applications to AKS?**
+   - Kubernetes manifest files are YAML or JSON files that define Kubernetes objects such as deployments, services, and ingress rules. We use these manifest files to describe the desired state of our applications and infrastructure, and Kubernetes ensures that the actual state matches the desired state.
+
+9. **How do you expose services in Kubernetes to make them accessible externally?**
+   - We define Kubernetes services of type `LoadBalancer` or `NodePort` to expose our applications externally. Kubernetes provisions external load balancers or opens specific ports on worker nodes to route traffic to the services.
+
+10. **What is the difference between a Kubernetes Deployment and a Kubernetes Service?**
+    - A Kubernetes Deployment manages a set of identical pods, ensuring that a specified number of replicas are running at any given time. A Kubernetes Service provides a stable endpoint for accessing a set of pods, abstracting away the underlying pod instances and enabling service discovery within the Kubernetes cluster.
+
+### Troubleshooting Questions:
+
+11. **What would you do if the deployment of MediaWiki or MySQL to AKS fails?**
+    - I would first check the logs of the deployment pods to identify any error messages or issues. If necessary, I would rollback the deployment to a previous version, inspect the Kubernetes events for any errors, and review the deployment manifest files for correctness.
+
+12. **How do you monitor and troubleshoot issues in a Kubernetes cluster?**
+    - I would use Kubernetes native tools such as `kubectl` to retrieve cluster information, inspect pod logs, and describe cluster resources. Additionally, I would leverage Kubernetes monitoring and logging solutions such as Prometheus and Fluentd to gain insights into cluster health and performance.
+
+### Best Practices Questions:
+
+13. **What are some best practices for securing Docker containers and Kubernetes clusters?**
+    - Best practices include using minimal and secure base images, implementing container image scanning, restricting container privileges, enabling pod security policies, and regularly applying security patches and updates.
+
+14. **How do you ensure high availability and scalability for applications deployed on AKS?**
+    - I would configure AKS with multiple availability zones for redundancy, use Kubernetes horizontal pod autoscaling to dynamically adjust the number of replicas based on resource usage, and design applications to be stateless and horizontally scalable.
+
+15. **Can you discuss strategies for rolling updates and blue-green deployments in Kubernetes?**
+    - Strategies include using Kubernetes Deployments with rolling update or recreate strategies, leveraging readiness and liveness probes to ensure smooth transitions, and implementing blue-green deployments using multiple Kubernetes namespaces or traffic shifting techniques with tools like Istio.
+
+### Additional Tips:
+- Provide examples from your experience where applicable.
+- Highlight your familiarity with relevant tools and technologies.
+- Emphasize your problem-solving and troubleshooting skills.
+- Showcase your understanding of best practices and industry standards.
+
+Remember to tailor your responses to your specific experience and the requirements of the role you're applying for.
