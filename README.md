@@ -16,9 +16,10 @@ Docker installed locally or access to Azure Cloud Shell
 
 Steps
 
-1. Build Docker Images
+1. Build Docker Images (We build docker images either on VM, or in Azure DevOps Build pipeline in build_push.yaml file and then push to ACR.)
 
 docker build -t mediawiki .
+
 docker build -t mysql .
 
 2. Tag and Push Docker Images to ACR 
@@ -30,10 +31,12 @@ az acr login --name <acr_name>
 
 * Tag and push MediaWiki image
 docker tag mediawiki <acr_login_server>/mediawiki
+
 docker push <acr_login_server>/mediawiki
 
 * Tag and push MySQL image
 docker tag mysql <acr_login_server>/mysql
+
 docker push <acr_login_server>/mysql
 
 3. Deploy MediaWiki and MySQL to AKS
@@ -59,4 +62,4 @@ kubectl get svc mediawiki-service
 
 Access MediaWiki using the external IP address in web browser.
 
-We also do build images on our LinuxVM and then push it to ACR.
+(We also do build images on our LinuxVM and then push it to ACR.)
